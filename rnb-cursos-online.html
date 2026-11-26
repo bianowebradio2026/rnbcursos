@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RNB Cursos Online | Construindo o Futuro com Solidez</title>
+<meta name="description" content="RNB Cursos Online: cursos com método, suporte e certificado. Peça seu material grátis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000;
+  --orange:#FF8C00;
+  --orange-dark:#D97300;
+  --white:#fff;
+  --paper:#F6F6F6;
+  --ink:#1c1c1c;
+  --muted:#5a5a5a;
+  --line:#e4e4e4;
+  --shadow:0 6px 24px rgba(0,0,0,.08);
+  --shadow-lg:0 14px 36px rgba(0,0,0,.14);
+  --head:"Archivo","Arial Black",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,serif;
+  --stripe:repeating-linear-gradient(-45deg,var(--orange) 0 14px,var(--black) 14px 28px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:var(--body);font-size:1.0625rem;line-height:1.65;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0;color:var(--black)}
+p{margin:0}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:var(--head);font-weight:800;font-size:1rem;text-decoration:none;padding:.9rem 1.6rem;border-radius:6px;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,transform .2s,box-shadow .2s}
+.btn-primary{background:var(--orange);color:var(--black);box-shadow:0 6px 18px rgba(255,140,0,.35)}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px)}
+.btn-dark{background:var(--black);color:var(--white)}
+.btn-dark:hover{background:#222;transform:translateY(-2px)}
+.btn-ghost{border-color:var(--white);color:var(--white)}
+.btn-ghost:hover{background:var(--white);color:var(--black)}
+.btn svg{width:20px;height:20px;fill:currentColor;flex:none}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--black);color:var(--white)}
+.site-header::after{content:"";display:block;height:6px;background:var(--stripe)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:72px}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--head);font-weight:900;font-size:1.35rem;letter-spacing:.01em}
+.logo-mark{display:grid;place-items:center;width:42px;height:42px;background:var(--orange);color:var(--black);border-radius:6px;font-size:1.05rem}
+.logo small{display:block;font-weight:500;font-size:.72rem;color:#bdbdbd;letter-spacing:.02em;margin-top:-2px}
+.nav{display:none}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.25rem}
+.nav a{display:block;padding:.6rem .9rem;font-family:var(--head);font-weight:700;font-size:.97rem;text-decoration:none;border-radius:6px;transition:color .2s,background .2s}
+.nav a:hover{color:var(--orange)}
+.header-cta{display:none}
+.menu-toggle{background:none;border:2px solid #444;color:var(--white);width:46px;height:46px;border-radius:6px;display:grid;place-items:center;cursor:pointer}
+.menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{display:block;width:22px;height:2px;background:currentColor;position:relative;transition:transform .25s,background .25s}
+.menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0}
+.menu-toggle span::before{top:-7px}
+.menu-toggle span::after{top:7px}
+.menu-toggle[aria-expanded="true"] span{background:transparent}
+.menu-toggle[aria-expanded="true"] span::before{transform:translateY(7px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span::after{transform:translateY(-7px) rotate(-45deg)}
+.nav.open{display:block;position:absolute;left:0;right:0;top:100%;background:var(--black);border-top:1px solid #2a2a2a;padding:1rem 1.25rem 1.5rem;box-shadow:var(--shadow-lg)}
+.nav.open ul{flex-direction:column}
+.nav.open .btn{width:100%;margin-top:1rem}
+.nav .mobile-cta{display:block}
+
+/* Hero */
+.hero{position:relative;color:var(--white);background:
+  linear-gradient(100deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.78) 55%,rgba(0,0,0,.45) 100%),
+  url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=1800&q=70") center/cover no-repeat,
+  var(--black);
+  padding:clamp(4rem,11vw,8.5rem) 0 clamp(5rem,12vw,9rem)}
+.hero h1{color:var(--white);font-weight:900;font-size:clamp(2.4rem,8.5vw,5rem);letter-spacing:-.025em;max-width:13ch}
+.hero p{max-width:34rem;margin-top:1.4rem;font-size:clamp(1.05rem,2.6vw,1.3rem);color:#e6e6e6}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+.hero-stripe{position:absolute;left:0;right:0;bottom:0;height:18px;background:var(--stripe)}
+
+/* Faixa de confiança */
+.proof{background:var(--paper);border-bottom:1px solid var(--line)}
+.proof ul{list-style:none;margin:0;padding:1.4rem 0;display:grid;gap:.9rem;grid-template-columns:1fr}
+.proof li{display:flex;align-items:center;gap:.75rem;font-family:var(--head);font-weight:700;font-size:.98rem}
+.proof li::before{content:"";width:12px;height:12px;background:var(--orange);border-radius:2px;flex:none}
+
+/* Seções */
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+.sec-head{max-width:40rem;margin-bottom:2.5rem}
+.sec-head h2{font-size:clamp(1.9rem,5vw,2.9rem);font-weight:900;letter-spacing:-.02em}
+.sec-head h2::after{content:"";display:block;width:64px;height:6px;background:var(--orange);margin-top:1rem;border-radius:2px}
+.sec-head p{margin-top:1rem;color:var(--muted)}
+
+/* Cards */
+.cards{display:grid;gap:1.5rem;grid-template-columns:1fr}
+.card{background:var(--white);border:1px solid var(--line);border-top:5px solid var(--orange);border-radius:8px;padding:2rem 1.75rem;box-shadow:var(--shadow);transition:box-shadow .25s,transform .25s;display:flex;flex-direction:column}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.icon{width:54px;height:54px;border-radius:8px;background:var(--black);display:grid;place-items:center;margin-bottom:1.25rem}
+.icon svg{width:28px;height:28px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.4rem;font-weight:800;margin-bottom:.7rem}
+.card > p{color:var(--muted)}
+.card ul{list-style:none;margin:1.1rem 0 1.5rem;padding:0;display:grid;gap:.55rem}
+.card li{position:relative;padding-left:1.7rem}
+.card li::before{content:"";position:absolute;left:0;top:.5em;width:.9rem;height:.5rem;border-left:3px solid var(--orange);border-bottom:3px solid var(--orange);transform:rotate(-45deg) translateY(-30%)}
+.card .btn{margin-top:auto;align-self:flex-start}
+.contact-list li::before{display:none}
+.contact-list li{padding-left:0}
+.contact-list strong{font-family:var(--head);display:block;font-size:.9rem;color:var(--black)}
+
+/* Quem somos */
+.about{background:var(--black);color:#dcdcdc}
+.about .sec-head h2{color:var(--white)}
+.about .sec-head p{color:#bdbdbd}
+.about-grid{display:grid;gap:2rem;grid-template-columns:1fr}
+.about-text p+p{margin-top:1rem}
+.values{display:grid;gap:1rem}
+.value{border-left:5px solid var(--orange);background:#161616;padding:1.1rem 1.3rem;border-radius:0 8px 8px 0}
+.value h3{color:var(--white);font-size:1.1rem;margin-bottom:.3rem}
+.value p{color:#bdbdbd;font-size:.98rem}
+
+/* Galeria */
+.grid{display:grid;gap:1rem;grid-template-columns:1fr 1fr}
+.grid figure{margin:0;position:relative;overflow:hidden;border-radius:8px;box-shadow:var(--shadow);aspect-ratio:4/5;background:var(--paper)}
+.grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.grid figure:hover img{transform:scale(1.06)}
+.grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.2rem .9rem .8rem;color:var(--white);font-family:var(--head);font-weight:700;font-size:.95rem;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+
+/* CTA */
+.cta{background:var(--orange);padding:3rem 0}
+.cta .wrap{display:flex;flex-direction:column;gap:1.4rem;align-items:flex-start}
+.cta h2{font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:900;max-width:24ch}
+.cta p{color:#1c1c1c;max-width:36rem}
+
+/* Footer */
+.site-footer{background:var(--black);color:#c9c9c9;padding:0}
+.site-footer::before{content:"";display:block;height:10px;background:var(--stripe)}
+.foot{display:grid;gap:2rem;grid-template-columns:1fr;padding:3.5rem 0 2.5rem}
+.site-footer h3{color:var(--white);font-size:1.05rem;margin-bottom:1rem}
+.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.site-footer a{text-decoration:none;transition:color .2s}
+.site-footer a:hover{color:var(--orange)}
+.foot .logo{color:var(--white);margin-bottom:1rem}
+.foot p{font-size:.97rem;max-width:26rem}
+.copy{border-top:1px solid #262626;padding:1.3rem 0;font-size:.9rem;color:#9a9a9a}
+.copy .wrap{display:flex;flex-direction:column;gap:.4rem}
+
+/* WhatsApp flutuante */
+.wa-float{position:fixed;right:1rem;bottom:1rem;z-index:60;width:56px;height:56px;border-radius:50%;background:var(--orange);display:grid;place-items:center;box-shadow:var(--shadow-lg);border:3px solid var(--black);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px;fill:var(--black)}
+
+/* Tablet e desktop */
+@media (min-width:640px){
+  .proof ul{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .copy .wrap{flex-direction:row;justify-content:space-between}
+}
+@media (min-width:900px){
+  .menu-toggle{display:none}
+  .nav{display:block}
+  .nav .mobile-cta{display:none}
+  .header-cta{display:inline-flex;padding:.7rem 1.2rem}
+  .proof ul{grid-template-columns:repeat(4,1fr)}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .about-grid{grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
+  .grid{grid-template-columns:repeat(4,1fr)}
+  .cta .wrap{flex-direction:row;align-items:center;justify-content:space-between}
+  .foot{grid-template-columns:1.6fr 1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="#inicio" class="logo" aria-label="RNB Cursos Online - início">
+      <span class="logo-mark">RNB</span>
+      <span>RNB<small>Cursos Online</small></span>
+    </a>
+
+    <nav class="nav" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a class="btn btn-primary mobile-cta" href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20cursos%20da%20RNB." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </nav>
+
+    <a class="btn btn-primary header-cta" href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20cursos%20da%20RNB." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.6a11.9 11.9 0 0 0 5.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.5zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.2 6.5 6.6 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.9-9.8 9.9zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
+      WhatsApp
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <h1>Construindo o Futuro com Solidez</h1>
+      <p>Cursos online com método passo a passo, tutores que respondem e certificado ao final. Aprenda no seu ritmo, de qualquer lugar.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20receber%20o%20material%20gr%C3%A1tis%20da%20RNB." target="_blank" rel="noopener">Material Grátis</a>
+        <a class="btn btn-ghost" href="#cursos">Ver cursos</a>
+      </div>
+    </div>
+    <div class="hero-stripe" aria-hidden="true"></div>
+  </section>
+
+  <!-- Faixa de confiança -->
+  <div class="proof">
+    <div class="wrap">
+      <ul>
+        <li>Aulas online, sem hora marcada</li>
+        <li>Suporte direto com tutores</li>
+        <li>Certificado de conclusão</li>
+        <li>Pagamento facilitado</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Serviços -->
+  <section id="cursos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Tudo o que você precisa para começar</h2>
+        <p>Veja como funcionam nossos cursos, como pagar e como falar com a nossa equipe.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6M9 11h6"/></svg></div>
+          <h3>Nossos Cursos</h3>
+          <p>Conteúdo organizado em módulos curtos, com material de apoio para baixar e exercícios práticos.</p>
+          <ul>
+            <li>Aulas gravadas com acesso a qualquer hora</li>
+            <li>Apostilas e exercícios em PDF</li>
+            <li>Tira-dúvidas com tutores</li>
+            <li>Certificado ao concluir</li>
+          </ul>
+          <a class="btn btn-dark" href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20conhecer%20a%20lista%20de%20cursos." target="_blank" rel="noopener">Ver lista de cursos</a>
+        </article>
+
+        <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
+          <h3>Formas de Pagamento</h3>
+          <p>Escolha a opção que cabe no seu orçamento. A matrícula é liberada assim que o pagamento é confirmado.</p>
+          <ul>
+            <li>Pix com condição especial</li>
+            <li>Cartão de crédito parcelado</li>
+            <li>Boleto bancário</li>
+            <li>Pagamento 100% seguro</li>
+          </ul>
+          <a class="btn btn-dark" href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20formas%20de%20pagamento." target="_blank" rel="noopener">Consultar valores</a>
+        </article>
+
+        <article class="card" id="contato">
+          <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Contato</h3>
+          <p>Fale com a equipe RNB para tirar dúvidas antes de se matricular.</p>
+          <ul class="contact-list">
+            <li><strong>WhatsApp</strong>(21) 99999-9999</li>
+            <li><strong>E-mail</strong>contato@rnbcursos.com.br</li>
+            <li><strong>Atendimento</strong>Segunda a sexta, 9h às 18h</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20RNB." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quem Somos -->
+  <section class="about" id="quem-somos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Quem somos</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>A RNB Cursos Online nasceu para tornar o aprendizado acessível e confiável. Cada curso é montado em etapas claras, para que você saiba o que estudar hoje e onde vai chegar no final.</p>
+          <p>Acreditamos que uma boa base faz toda a diferença: quem aprende com solidez constrói uma carreira mais segura.</p>
+        </div>
+        <div class="values">
+          <div class="value"><h3>Método claro</h3><p>Módulos curtos, objetivos definidos e prática em cada etapa.</p></div>
+          <div class="value"><h3>Apoio de verdade</h3><p>Dúvidas respondidas por pessoas, não por robôs.</p></div>
+          <div class="value"><h3>Compromisso</h3><p>Transparência no preço, no conteúdo e no prazo de acesso.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section id="galeria">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Material de estudo de qualidade</h2>
+        <p>Uma amostra do ambiente de leitura e dos livros que acompanham nossos cursos.</p>
+      </div>
+      <div class="grid">
+        <figure>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=70" alt="Pilha de livros coloridos sobre uma mesa">
+          <figcaption>Livros-base</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=600&q=70" alt="Livro aberto com páginas à mostra">
+          <figcaption>Leitura guiada</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=600&q=70" alt="Estante com vários livros organizados">
+          <figcaption>Biblioteca de apoio</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=70" alt="Livros e caderno de anotações em uma mesa de estudo">
+          <figcaption>Hora de estudar</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="cta" aria-label="Chamada final">
+    <div class="wrap">
+      <div>
+        <h2>Receba um material grátis e conheça nosso método</h2>
+        <p>Peça pelo WhatsApp e receba o conteúdo de exemplo na hora.</p>
+      </div>
+      <a class="btn btn-dark" href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20receber%20o%20material%20gr%C3%A1tis%20da%20RNB." target="_blank" rel="noopener">Material Grátis</a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="wrap foot">
+    <div>
+      <a href="#inicio" class="logo"><span class="logo-mark">RNB</span><span>RNB<small>Cursos Online</small></span></a>
+      <p>Cursos online com método, suporte e certificado. Construindo o futuro com solidez.</p>
+    </div>
+    <div>
+      <h3>Navegação</h3>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Fale conosco</h3>
+      <ul>
+        <li><a href="https://wa.me/5521999999999" target="_blank" rel="noopener">WhatsApp (21) 99999-9999</a></li>
+        <li><a href="mailto:contato@rnbcursos.com.br">contato@rnbcursos.com.br</a></li>
+        <li>Seg a sex, 9h às 18h</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="wrap">
+      <span>&copy; <span id="ano">2026</span> RNB Cursos Online. Todos os direitos reservados.</span>
+      <span>Imagens: Unsplash</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5521999999999" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.6a11.9 11.9 0 0 0 5.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.5zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.2 6.5 6.6 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.9-9.8 9.9zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script>
+  // Menu mobile
+  (function(){
+    var btn = document.querySelector('.menu-toggle');
+    var menu = document.getElementById('menu');
+    function fechar(){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','Abrir menu');
+    }
+    btn.addEventListener('click', function(){
+      var aberto = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', aberto);
+      btn.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+    });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', fechar); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') fechar(); });
+    window.addEventListener('resize', function(){ if(window.innerWidth >= 900) fechar(); });
+  })();
+
+  // Ano atual no rodapé
+  document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
