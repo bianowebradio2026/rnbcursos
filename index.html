@@ -5,15 +5,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="RNB Cursos Online. Cursos online para transformar conhecimento em conquistas.">
+<meta name="theme-color" content="#101010">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="RNB Cursos Online | Construindo o Futuro com Solidez">
+<meta property="og:description" content="Cursos online com conteúdo organizado, estudo flexível e suporte ao aluno.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=75">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23101010'/%3E%3Ctext x='32' y='42' font-family='Arial Black,Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%23FF8C00'%3ERNB%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
 <title>RNB Cursos Online | Seu Futuro Começa Aqui</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
     --orange:#FF8C00;
     --orange-dark:#E67800;
+    --orange-text:#B85600;
     --black:#101010;
     --black2:#191919;
     --white:#fff;
@@ -58,7 +68,7 @@ img{width:100%;display:block}
     margin-bottom:12px;
 }
 
-.section-heading h2 span{color:var(--orange)}
+.section-heading h2 span{color:var(--orange-text)}
 
 .section-heading p{
     max-width:700px;
@@ -116,12 +126,32 @@ img{width:100%;display:block}
     padding:6px 13px;
     border-radius:50px;
     background:rgba(255,140,0,.13);
-    color:var(--orange-dark);
+    color:var(--orange-text);
     font-size:.78rem;
     font-weight:800;
     letter-spacing:1px;
     text-transform:uppercase;
 }
+
+/* ACESSIBILIDADE E EXTRAS */
+
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+.skip{position:absolute;left:-999px;top:8px;z-index:2000;background:var(--orange);color:#111;padding:10px 16px;border-radius:6px;font-weight:700}
+.skip:focus{left:8px}
+
+.ico{width:1.15em;height:1.15em;fill:currentColor;flex:none}
+
+.nav .nav-cta{display:none}
+
+.menu-btn{min-width:44px;min-height:44px}
+
+.pay{background:var(--light);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:42px 0}
+.pay-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.pay h2{font-size:1.4rem;margin-bottom:6px}
+.pay p{color:var(--gray)}
+.pay-list{list-style:none;display:flex;gap:12px;flex-wrap:wrap}
+.pay-list li{background:#fff;border:1px solid var(--border);border-left:4px solid var(--orange);border-radius:8px;padding:12px 20px;font-family:Montserrat,sans-serif;font-weight:700;box-shadow:var(--shadow)}
 
 /* TOP BAR */
 
@@ -181,7 +211,7 @@ header{
     transition:.2s;
 }
 
-.nav a:hover{color:var(--orange)}
+.nav a:hover{color:var(--orange-text)}
 
 .menu-btn{
     display:none;
@@ -201,7 +231,7 @@ header{
     position:relative;
     background:
     linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.78),rgba(0,0,0,.3)),
-    url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1920&q=85')
+    url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1920&q=75')
     center/cover;
 }
 
@@ -384,7 +414,7 @@ header{
 
 .course-features li::before{
     content:"✓";
-    color:var(--orange-dark);
+    color:var(--orange-text);
     font-weight:900;
     margin-right:10px;
 }
@@ -433,7 +463,7 @@ header{
     font-weight:900;
 }
 
-.about-text h2 span{color:var(--orange)}
+.about-text h2 span{color:var(--orange-text)}
 
 .about-text p{
     color:var(--gray);
@@ -452,7 +482,7 @@ header{
 
 .about-list li::before{
     content:"✔";
-    color:var(--orange-dark);
+    color:var(--orange-text);
     margin-right:12px;
 }
 
@@ -631,13 +661,13 @@ footer{
 
 /* REVEAL */
 
-.reveal{
+.js .reveal{
     opacity:0;
     transform:translateY(25px);
     transition:.7s ease;
 }
 
-.reveal.active{
+.js .reveal.active{
     opacity:1;
     transform:translateY(0);
 }
@@ -678,6 +708,8 @@ footer{
     }
 
     .nav.active{display:flex}
+
+    .nav .nav-cta{display:flex;margin-top:14px;border:2px solid var(--orange)}
 
     .nav a{
         padding:14px;
@@ -721,6 +753,9 @@ footer{
 
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.6a11.9 11.9 0 0 0 5.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.5zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.2 6.5 6.6 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.9-9.8 9.9zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></symbol></svg>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
 <!-- BARRA PROMOCIONAL -->
 <div class="topbar">
     <div class="container">
@@ -738,30 +773,32 @@ footer{
         </a>
 
         <button class="menu-btn" id="menuBtn"
-            aria-label="Abrir menu" aria-expanded="false">☰</button>
+            aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">☰</button>
 
         <nav class="nav" id="nav">
             <a href="#inicio">Início</a>
             <a href="#cursos">Cursos</a>
             <a href="#quem-somos">Quem Somos</a>
-            <a href="#depoimentos">Depoimentos</a>
             <a href="#contato">Contato</a>
+            <a href="https://wa.me/5521999999999" class="btn nav-cta" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Fale Conosco</a>
         </nav>
 
         <a href="https://wa.me/5521999999999"
            class="btn header-whatsapp"
            target="_blank" rel="noopener noreferrer">
-            ☎ Fale Conosco
+            <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Fale Conosco
         </a>
 
     </div>
 </header>
 
+<main id="conteudo">
+
 <!-- HERO -->
 <section class="hero" id="inicio">
     <div class="container">
 
-        <div class="hero-content reveal">
+        <div class="hero-content">
 
             <span class="badge">Educação • Oportunidade • Futuro</span>
 
@@ -778,7 +815,7 @@ footer{
 
             <div class="hero-actions">
                 <a href="#cursos" class="btn">Conheça nossos cursos →</a>
-                <a href="#material" class="btn btn-white">Material Grátis</a>
+                <a href="https://wa.me/5521999999999?text=Quero%20receber%20o%20material%20gr%C3%A1tis%20da%20RNB" class="btn btn-white" target="_blank" rel="noopener noreferrer">Material Grátis</a>
             </div>
 
             <div class="hero-note">
@@ -866,7 +903,7 @@ footer{
             <article class="course-card reveal">
 
                 <div class="course-img">
-                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=85"
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=75"
                          alt="Livros e estudos" loading="lazy">
                     <span class="course-label">DESTAQUE</span>
                 </div>
@@ -886,8 +923,8 @@ footer{
                     </ul>
 
                     <div class="course-price">
-                        <small>Consulte o valor</small>
-                        <strong>Consulte</strong>
+                        <small>Investimento</small>
+                        <strong>Sob consulta</strong>
                     </div>
 
                     <a href="https://wa.me/5521999999999?text=Quero%20informacoes%20sobre%20o%20Curso%20Preparat%C3%B3rio"
@@ -902,7 +939,7 @@ footer{
             <article class="course-card reveal">
 
                 <div class="course-img">
-                    <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=800&q=85"
+                    <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=800&q=75"
                          alt="Material de estudo" loading="lazy">
                     <span class="course-label">ONLINE</span>
                 </div>
@@ -922,8 +959,8 @@ footer{
                     </ul>
 
                     <div class="course-price">
-                        <small>Consulte o valor</small>
-                        <strong>Consulte</strong>
+                        <small>Investimento</small>
+                        <strong>Sob consulta</strong>
                     </div>
 
                     <a href="https://wa.me/5521999999999?text=Quero%20informacoes%20sobre%20o%20Curso%20de%20Aperfeicoamento"
@@ -938,7 +975,7 @@ footer{
             <article class="course-card reveal">
 
                 <div class="course-img">
-                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=85"
+                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=75"
                          alt="Livros e educação" loading="lazy">
                     <span class="course-label">FORMAÇÃO</span>
                 </div>
@@ -958,8 +995,8 @@ footer{
                     </ul>
 
                     <div class="course-price">
-                        <small>Consulte o valor</small>
-                        <strong>Consulte</strong>
+                        <small>Investimento</small>
+                        <strong>Sob consulta</strong>
                     </div>
 
                     <a href="https://wa.me/5521999999999?text=Quero%20informacoes%20sobre%20o%20Curso%20Especializado"
@@ -975,12 +1012,27 @@ footer{
     </div>
 </section>
 
+<!-- FORMAS DE PAGAMENTO -->
+<section class="pay" aria-labelledby="pay-title">
+    <div class="container pay-inner">
+        <div>
+            <h2 id="pay-title">Formas de pagamento</h2>
+            <p>Confirme valores e condições com a nossa equipe antes de se matricular.</p>
+        </div>
+        <ul class="pay-list">
+            <li>Pix</li>
+            <li>Cartão de crédito</li>
+            <li>Boleto</li>
+        </ul>
+    </div>
+</section>
+
 <!-- QUEM SOMOS -->
 <section class="section about" id="quem-somos">
     <div class="container about-grid">
 
         <div class="about-image reveal">
-            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1000&q=85"
+            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1000&q=75"
                  alt="Ambiente de aprendizado" loading="lazy">
         </div>
 
@@ -1021,7 +1073,7 @@ footer{
 </section>
 
 <!-- GALERIA -->
-<section class="section" id="material">
+<section class="section" id="galeria">
     <div class="container">
 
         <div class="section-heading">
@@ -1035,23 +1087,23 @@ footer{
         <div class="gallery-grid">
 
             <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=85"
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=75"
                      alt="Livros para estudar" loading="lazy">
             </div>
 
             <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=85"
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=75"
                      alt="Livros em biblioteca" loading="lazy">
             </div>
 
             <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=85"
-                     alt="Livros de conhecimento" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=75"
+                     alt="Livro aberto sobre a mesa" loading="lazy">
             </div>
 
             <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=800&q=85"
-                     alt="Material didático" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=75"
+                     alt="Livros e caderno de anotações" loading="lazy">
             </div>
 
         </div>
@@ -1059,7 +1111,7 @@ footer{
     </div>
 </section>
 
-<!-- DEPOIMENTOS -->
+<!-- DEPOIMENTOS: desativado porque os textos eram ilustrativos. Para ativar, troque por avaliações reais e remova as marcas de comentário.
 <section class="section testimonials" id="depoimentos">
     <div class="container">
 
@@ -1113,6 +1165,7 @@ footer{
 
     </div>
 </section>
+-->
 
 <!-- CTA -->
 <section class="cta">
@@ -1183,6 +1236,8 @@ footer{
     </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
     <div class="container">
@@ -1208,8 +1263,7 @@ footer{
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#cursos">Cursos</a></li>
                     <li><a href="#quem-somos">Quem Somos</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li>
-                    <li><a href="#material">Material Grátis</a></li>
+                    <li><a href="https://wa.me/5521999999999?text=Quero%20receber%20o%20material%20gr%C3%A1tis%20da%20RNB" target="_blank" rel="noopener noreferrer">Material Grátis</a></li>
                 </ul>
             </div>
 
@@ -1240,8 +1294,8 @@ footer{
    class="whatsapp-float"
    target="_blank"
    rel="noopener noreferrer"
-   aria-label="WhatsApp">
-    ☎
+   aria-label="Falar no WhatsApp">
+    <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
 </a>
 
 <script>
@@ -1249,19 +1303,16 @@ footer{
 const menuBtn=document.getElementById('menuBtn');
 const nav=document.getElementById('nav');
 
-menuBtn.addEventListener('click',()=>{
-    const open=nav.classList.toggle('active');
+function setMenu(open){
+    nav.classList.toggle('active',open);
     menuBtn.setAttribute('aria-expanded',open);
+    menuBtn.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
     menuBtn.innerHTML=open?'✕':'☰';
-});
+}
 
-nav.querySelectorAll('a').forEach(link=>{
-    link.addEventListener('click',()=>{
-        nav.classList.remove('active');
-        menuBtn.setAttribute('aria-expanded','false');
-        menuBtn.innerHTML='☰';
-    });
-});
+menuBtn.addEventListener('click',()=>setMenu(!nav.classList.contains('active')));
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
 
 // ANIMAÇÃO DE ENTRADA
 const observer=new IntersectionObserver(entries=>{
